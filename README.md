@@ -1,3 +1,3 @@
 # DAW
 
-![Horario](.Horario.pmg)
+![Horario](.screenshots/Horario.png)
