@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="ruso()">Ruso</button>
+    <button type="button" onclick="español()">español</button>
+    <button type="button" onclick="ingles()">ingles</button>
+    <script>
+        texto = "Bienvenido";
+        var valor = document.getElementById('texto');
+        function ruso() {
+            valor.style.color = "red";
+        }
+        function español() {
+            window.alert("Bienvenido");
+        }
+        function ingles() {
+            window.alert("Welcome");
+        }
+    </script>
+</body>
+</html>
