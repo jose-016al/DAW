@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <button type="button" onclick="ruso()">Ruso</button>
-    <button type="button" onclick="español()">español</button>
-    <button type="button" onclick="ingles()">ingles</button>
-    <script>
-        function ruso() {
-            window.alert("Добро пожаловать");
-        }
-        function español() {
-            window.alert("Bienvenido");
-        }
-        function ingles() {
-            window.alert("Welcome");
-        }
-    </script>
-</body>
+    <head>
+        <title>Ejercicio 5</title>
+        <script>
+            function ruso() {
+                document.getElementById('padre').innerHTML+='<p style=color:red;>Добро пожаловать</p>'
+            }
+            function español() {
+                document.getElementById('padre').innerHTML+='<p style=color:blue;>Bienvenido</p>'
+            }
+            function ingles() {
+                document.getElementById('padre').innerHTML+='<p style=color:yellow;>Welcome</p>'
+            }
+        </script>
+    </head>
+    <body>
+        <div id="padre"></div>
+        <button type="button" onclick="ruso()">Ruso</button>
+        <button type="button" onclick="español()">español</button>
+        <button type="button" onclick="ingles()">ingles</button>
+    </body>
 </html>
