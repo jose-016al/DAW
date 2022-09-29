@@ -2,12 +2,21 @@
     <html lang="en">
     <head>
         <title>Ejercicio 1</title>
+        <script>
+            function cambiar() {
+                var text = document.getElementById('text');
+                text.innerHTML = "Cambiando el contenido";
+            }
+            function cambiarTitle () {
+                var title = document.getElementById('title');
+                title.style.color = "red";
+            }
+        </script>
     </head>
     <body>
-        <h1>Modificando el codigo HTML</h1>
-        <p id="prueba">Modificando el codigo</p>
-        <button type="buttom" 
-        onclick="document.getElementById('prueba').innerHTML = 'Cambaindo el contenido'">
-        pulsa aqui</button>
+        <h1 id="title">Modificando el codigo HTML</h1>
+        <p id="text">Modificando el codigo</p>
+        <button type="buttom" onclick="cambiar()">Cambiar contenido</button>
+        <button type="buttom" onclick="cambiarTitle()">Cambiar titulo</button>
     </body>
 </html>
