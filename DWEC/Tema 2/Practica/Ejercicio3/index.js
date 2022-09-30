@@ -1,4 +1,7 @@
 var n =  prompt("Introduce un numero");
 
-
-alert(n);
+if (isNaN(n)) {
+    alert("No es un numero")
+} else {
+    alert("Es un numero");
+}
