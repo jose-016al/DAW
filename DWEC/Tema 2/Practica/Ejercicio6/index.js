@@ -1,32 +1,32 @@
-var respuesta = true;
-var aleatorio = 200;
-var numero;
-
-var contador = 1;
+const num = parseInt(Math.random() * 999 + 1); // se genera el numero aleatorio
+let salir = true;
+let contador = 0;
 
 do {
-    numero = prompt("Introduce un numero");
-    if (isNaN(numero)) {
-        numero = prompt("Erros, debe ser un valor numerico");
-        contador++;
+    let intr = window.prompt("Introduce Un numero");
+    if (isNaN(intr)) {
+        alert("No es un numero, vuelve a introducirlo");
     } else {
-        if (numero > aleatorio) {
-            numero = prompt("El numero es menor");
-            contador++;
-        } else if (numero < aleatorio) {
-            numero = prompt("El numero es mayor");
-            contador++;
-        } else if (numero == aleatorio) {
-            var respuesta = confirm("Has acertado el numero con: " + contador + " intentos ¿Quieres volver a jugar?")
-            if (respuesta == true) {
-                contador = 1;
-                // aleatorio = Math.floor((Math.random() * (1001 - 1 + 1)) + 1);
-            } else {
-                respuesta = false;
+        if (intr === null) { //Si el usuario ha cancelado
+            break;
+        }
+
+        if(intr == num) {
+            alert("Has acertado!");
+            salir = false;
+        } else if (intr > num) {
+            if (!window.confirm("El numero es menor que el que has introducido")) {
+                salir = false;
+                contador++;
+            }
+        } else if (intr<num) {
+            if (!window.confirm("El numero es mayor que el que has introducido")) {
+                salir = false;
+                contador++;
             }
         }
     }
-} while (numero != aleatorio && respuesta == false);
 
+} while (salir);
 
-
+document.write("Intentos :" + contador);
