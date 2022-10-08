@@ -31,7 +31,8 @@ function abrirAuxiliar() {
 function abrirMoodle() {
     let url = 'https://educacionadistancia.juntadeandalucia.es/centros/granada/';
     if (confirm('¿Quieres abrir moodle centros?') == true) {
-        ventana = window.open(url, "height=800,width=600, resizable=no");
+        // ventana = window.open(url, "", "height=800,width=600,resizable=no" );
+        ventana = window.open(url, "", "height=800,width=600,left=300,resizable=");
     } else {
         document.getElementById('apartado_d').innerHTML += '<h3>El usuario ha cancelado la operacion</h3>';
     }
