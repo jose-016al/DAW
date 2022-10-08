@@ -25,4 +25,5 @@ function abrirAuxiliar() {
     let name = prompt("Introduce un nombre para la nueva pagina");
     window.name = "hola";
     ventana = window.open("./auxiliar.html");
+    document.getElementById('apartado_c').innerHTML += '<h3>El nombre de la ventana es: ' + window.name + '</h3>';
 }

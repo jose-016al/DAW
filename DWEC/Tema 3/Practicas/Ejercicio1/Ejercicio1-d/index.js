@@ -25,8 +25,14 @@ function abrirAuxiliar() {
     let name = prompt("Introduce un nombre para la nueva pagina");
     window.name = "hola";
     ventana = window.open("./auxiliar.html");
+    document.getElementById('apartado_c').innerHTML += '<h3>El nombre de la ventana es: ' + window.name + '</h3>';
 }
 
-function abrirMoodle () {
-    ventana = window.open("https://educacionadistancia.juntadeandalucia.es/centros/granada/", "height=800,width=600");
+function abrirMoodle() {
+    let url = 'https://educacionadistancia.juntadeandalucia.es/centros/granada/';
+    if (confirm('¿Quieres abrir moodle centros?') == true) {
+        ventana = window.open(url, "height=800,width=600, resizable=no");
+    } else {
+        document.getElementById('apartado_d').innerHTML += '<h3>El usuario ha cancelado la operacion</h3>';
+    }
 }
