@@ -12,17 +12,17 @@ function cerrar() {
 }
 
 function segundoPlano() {
-    ventana.close();
+    // ventana.close();
     ventana = window.open("", "_blank", "width=400,height=400");
 }
 
 function moverVentana() {
-    segundoPlano();
+    // segundoPlano();
     ventana.moveTo(300,300);
 }
 
 function cambiarTamano() {
-    segundoPlano();
+    // segundoPlano();
     ventana.resizeTo(200,200);
 }
 
