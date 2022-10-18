@@ -1,0 +1,29 @@
+DROP USER IF EXISTS blog;
+
+DROP DATABASE IF EXISTS blog;
+
+CREATE DATABASE blog COLLATE utf8mb4_spanish_ci;
+
+USE blog;
+
+CREATE TABLE users (
+    id			INT AUTO_INCREMENT PRIMARY KEY,
+	user			VARCHAR(50),
+	password		VARCHAR(50)
+);
+
+CREATE TABLE films (
+	id 			INT AUTO_INCREMENT PRIMARY KEY,
+	title 		VARCHAR(50),
+	year			VARCHAR(50)
+);
+CREATE TABLE articulos (
+	id 			INT AUTO_INCREMENT PRIMARY KEY,
+	title		VARCHAR(50),
+	contenido	VARCHAR(255),
+	fecha		DATE,
+	autor		VARCHAR(50),
+	imagen		VARCHAR(50),
+	id_user		INT,
+	FOREIGN KEY (id_user) REFERENCES users(id)
+);
