@@ -13,26 +13,34 @@ CREATE TABLE users (
 	id_rol		INT
 );
 
-CREATE TABLE films (
-	id 			INT AUTO_INCREMENT PRIMARY KEY,
-	title 		VARCHAR(50),
-	year			VARCHAR(50)
-);
+
 CREATE TABLE articulos (
 	id 			INT AUTO_INCREMENT PRIMARY KEY,
 	title		VARCHAR(50),
-	contenido	VARCHAR(255),
-	fecha		DATETIME,
-	imagen		VARCHAR(50),
+	contenido	TEXT,
+	fecha		DATE,
+	imagen		BLOB,
 	id_user		INT,
 	FOREIGN KEY (id_user) REFERENCES users(id)
 );
+
 CREATE TABLE comentarios (
 	id			INT AUTO_INCREMENT PRIMARY KEY,
-	comentario	VARCHAR(255),
-	fecha		DATETIME,
+	comentario	TEXT,
+	fecha		DATE,
 	id_user		INT,
 	id_articulo	INT,
 	FOREIGN KEY (id_user) REFERENCES users(id),
 	FOREIGN KEY (id_articulo) REFERENCES articulos(id)
 );
+
+INSERT INTO users (user, password, id_rol) VALUES ("jose_016al", "211099", 0);
+INSERT INTO users (user, password, id_rol) VALUES ("inma", "1234", 1);
+INSERT INTO users (user, password, id_rol) VALUES ("alberto", "1234", 1);
+INSERT INTO users (user, password, id_rol) VALUES ("daulin", "1234", 1);
+
+INSERT INTO articulos (title, contenido, fecha, imagen, id_user) VALUES("PHP", "PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web. Fue creado inicialmente por el programador danés-canadiense Rasmus Lerdorf en 1994", NOW(), "https://dinahosting.com/blog/cont/uploads/2020/11/php-8.jpg", 1);
+INSERT INTO articulos (title, contenido, fecha, imagen, id_user) VALUES("Python", "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, ejemplos: Instagram, Netflix, Spotify, Panda 3D, entre otros.", NOW(), "https://www.icog.es/cursos/wp-content/uploads/2020/09/phyton.png", 3);
+
+INSERT INTO comentarios (comentario, fecha, id_user, id_articulo) VALUES ("comentario 1", NOW(), 1, 1);
+

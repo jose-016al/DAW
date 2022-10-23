@@ -1,16 +1,10 @@
-/* 
-Author: @mrjopino
-Name: Design Register
-Description: Design register crazy!
-*/
-@charset "utf-8";
+
 @import url(https://fonts.googleapis.com/css?family=Titan+One);
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 
 body {
 	background: #1b1e24;
- 
 }
 
 [class*="fontawesome-"]:before {
