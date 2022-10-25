@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 12</title>
+        <script>
+            var frase = prompt("Introduce una cadena: ");
+            var clave = prompt("Introduce un numero para el crifrado: ");
+            if (isNaN(clave)) {
+                clave = prompt("Error, Debe ser un numero: ");
+            }
+
+            function cifrar(frase, clave) {
+                let letra;
+                let respuesta = '';
+                let alfabeto = 'abcdefghijklmnopqrstuvwxyz';
+                let cifrado = alfabeto.slice(-clave);
+                cifrado  += alfabeto.slice(0, alfabeto.length - clave);
+                for (let i = 0; i < frase.length; i++) {  
+                    letra = frase[i].toLowerCase();
+                    if (letra == ' ') {
+                        letra = ' ';
+                    } else {
+                        letra = cifrado[alfabeto.indexOf(letra)] ; 
+                    }
+                    respuesta += letra;
+                }           
+                return  respuesta;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="solucion"></h1>
+
+        <script>
+            document.getElementById("solucion").innerHTML = "El cifrado es: " + cifrar(frase, clave);
+        </script>
+    </body>
+</html>
