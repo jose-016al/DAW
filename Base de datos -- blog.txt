@@ -18,8 +18,9 @@ CREATE TABLE articulos (
 	id 			INT AUTO_INCREMENT PRIMARY KEY,
 	title		VARCHAR(50),
 	contenido	TEXT,
-	fecha		DATE,
-	imagen		BLOB,
+	fecha		DATETIME,
+	mostrar		INT,
+	imagen		VARCHAR(255),
 	id_user		INT,
 	FOREIGN KEY (id_user) REFERENCES users(id)
 );
@@ -27,7 +28,8 @@ CREATE TABLE articulos (
 CREATE TABLE comentarios (
 	id			INT AUTO_INCREMENT PRIMARY KEY,
 	comentario	TEXT,
-	fecha		DATE,
+	fecha		DATETIME,
+	mostrar		INT,
 	id_user		INT,
 	id_articulo	INT,
 	FOREIGN KEY (id_user) REFERENCES users(id),
@@ -39,8 +41,10 @@ INSERT INTO users (user, password, id_rol) VALUES ("inma", "1234", 1);
 INSERT INTO users (user, password, id_rol) VALUES ("alberto", "1234", 1);
 INSERT INTO users (user, password, id_rol) VALUES ("daulin", "1234", 1);
 
-INSERT INTO articulos (title, contenido, fecha, imagen, id_user) VALUES("PHP", "PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web. Fue creado inicialmente por el programador danés-canadiense Rasmus Lerdorf en 1994", NOW(), "https://dinahosting.com/blog/cont/uploads/2020/11/php-8.jpg", 1);
-INSERT INTO articulos (title, contenido, fecha, imagen, id_user) VALUES("Python", "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, ejemplos: Instagram, Netflix, Spotify, Panda 3D, entre otros.", NOW(), "https://www.icog.es/cursos/wp-content/uploads/2020/09/phyton.png", 3);
+INSERT INTO articulos (title, contenido, fecha, mostrar, imagen, id_user) VALUES("PHP", "PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web. Fue creado inicialmente por el programador danés-canadiense Rasmus Lerdorf en 1994", NOW(), 1,"php.png", 1);
+INSERT INTO articulos (title, contenido, fecha, mostrar, imagen, id_user) VALUES("Python", "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, ejemplos: Instagram, Netflix, Spotify, Panda 3D, entre otros.", NOW(), 1, "python.png", 3);
+INSERT INTO articulos (title, contenido, fecha, mostrar, imagen, id_user) VALUES("Java", "Java es un lenguaje de programación y una plataforma informática que fue comercializada por primera vez en 1995 por Sun Microsystems.​​", NOW(), 1, "java.jpg", 2);
+INSERT INTO articulos (title, contenido, fecha, mostrar, imagen, id_user) VALUES("Java", "JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico.", NOW(), 1, "javascript.jpg", 4);
 
-INSERT INTO comentarios (comentario, fecha, id_user, id_articulo) VALUES ("comentario 1", NOW(), 1, 1);
+INSERT INTO comentarios (comentario, fecha, mostrar, id_user, id_articulo) VALUES ("¿Qué es mejor JavaScript o PHP?", NOW(), 1, 2, 1);
 
